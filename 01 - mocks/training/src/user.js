@@ -3,7 +3,7 @@ class User {
     this.id = id;
     this.name = name;
     this.status = status;
-    this.createdAt = new Date();
+    this.createdAt = new Date().getDate();
   }
 }
 
