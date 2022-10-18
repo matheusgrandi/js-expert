@@ -9,13 +9,14 @@ class Service {
       });
     });
   }
+  async getPlanets(url) {
+    const result = await this.makeRequest(url);
+    return {
+      name: result.name,
+      surfaceWater: result.surface_water,
+      appearedIn: result.films.length,
+    };
+  }
 }
-
-(async () => {
-  response = await new Service().makeRequest(
-    'https://swapi.dev/api/planets/2/'
-  );
-  console.log(JSON.stringify(response));
-})();
 
 module.exports = Service;
