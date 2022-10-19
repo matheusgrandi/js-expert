@@ -1,4 +1,5 @@
 const https = require('https');
+const { on } = require('stream');
 
 class Service {
   makeRequest(url) {
@@ -9,6 +10,7 @@ class Service {
       });
     });
   }
+
   async getPlanets(url) {
     const result = await this.makeRequest(url);
     return {
