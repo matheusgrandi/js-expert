@@ -1,3 +1,4 @@
 /02 - stubs/node_modules
 /03 - spies/node_modules
 /04 - coverage-e2e/node_modules
+/04 - coverage-e2e/.nyc_output
