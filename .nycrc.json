@@ -3,5 +3,6 @@
   "lines": 100,
   "functions": 100,
   "checkCoverage": true,
-  "reporter": ["html", "text"]
+  "reporter": ["html", "text"],
+  "exclude": ["src/repository/base/*.js"]
 }
