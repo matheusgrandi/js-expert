@@ -10,6 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
+    "chai": "^4.3.7",
     "mocha": "^10.1.0",
     "nyc": "^15.1.0",
     "sinon": "^14.0.2"
