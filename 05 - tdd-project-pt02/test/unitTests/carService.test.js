@@ -41,7 +41,7 @@ describe('CarService Suite Test', () => {
       .stub(carService, carService.getRandomPositionFromArray.name)
       .returns(carIdIndex);
 
-    result = carService.chooseRandomCar(carCategory);
+    const result = carService.chooseRandomCar(carCategory);
     const expected = carCategory.carIds[carIdIndex];
 
     expect(carService.getRandomPositionFromArray.calledOnce).to.be.ok;
