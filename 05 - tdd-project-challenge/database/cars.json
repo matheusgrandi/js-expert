@@ -1,19 +1,22 @@
 [
   {
-    "id": "382b5acc-c6cb-4de3-9c1a-6c359915b050",
-    "name": "Sentra",
+    "id": "a221b560-3a8f-42ca-9605-d97920454db2",
+    "name": "Model 3",
+    "realeaseYear": 2022,
     "available": true,
     "gasAvailable": true
   },
   {
-    "id": "dcefb922-95c2-459d-9d4e-2ed55dc7d28a",
-    "name": "Cruze",
+    "id": "b1e2ebe8-99fb-45ae-86f4-12fcc9b25c31",
+    "name": "A4",
+    "realeaseYear": 2022,
     "available": true,
     "gasAvailable": true
   },
   {
-    "id": "718d58c3-a9d6-4dcb-b68e-add60f40fe88",
-    "name": "Focus",
+    "id": "5a846d18-a872-499a-82e2-91c5035748aa",
+    "name": "Escalade",
+    "realeaseYear": 2022,
     "available": true,
     "gasAvailable": true
   }

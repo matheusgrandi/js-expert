@@ -1,6 +1,7 @@
 {
-  "id": "382b5acc-c6cb-4de3-9c1a-6c359915b050",
-  "name": "Sentra",
+  "id": "a221b560-3a8f-42ca-9605-d97920454db2",
+  "name": "Model 3",
+  "realeaseYear": 2022,
   "available": true,
   "gasAvailable": true
 }

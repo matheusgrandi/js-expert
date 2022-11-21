@@ -25,7 +25,7 @@ for (let index = 0; index <= ITEMS_AMOUNT; index++) {
     name: faker.vehicle.model(),
     available: true,
     gasAvailable: true,
-    realeaseYear: faker.date.past().getFullYear,
+    realeaseYear: faker.date.past().getFullYear(),
   });
   carCategory.carIds.push(car.id);
   cars.push(car);
