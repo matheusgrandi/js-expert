@@ -1,6 +1,7 @@
 const http = require('http');
 
-const CarService = require('../../05 - tdd-project-pt03/src/service/carService');
+const CarCategory = require('./entities/carCategory');
+const CarService = require('../../05 - tdd-project-challenge/src/service/carService');
 
 const DEFAULT_PORT = 3030;
 
@@ -19,6 +20,66 @@ class Api {
 
   generateRoutes() {
     return {
+      '/calculateFinalPrice:post': async (request, response) => {
+        for await (const data of request) {
+          try {
+            const { customer, carCategory, numberOfDays } = JSON.parse(data);
+
+            const result = await this.carService.calculateFinalPrice(
+              customer,
+              carCategory,
+              numberOfDays
+            );
+
+            response.writeHead(200, DEFAULT_HEADERS);
+
+            response.write(JSON.stringify({ result }));
+            response.end();
+          } catch (error) {
+            response.writeHead(500, DEFAULT_HEADERS);
+            response.write(JSON.stringify({ error: 'Something is wrong!' }));
+            response.end();
+          }
+        }
+      },
+      '/getAvailableCar:get': async (request, response) => {
+        for await (const data of request) {
+          try {
+            const carCategory = JSON.parse(data);
+            const result = await this.carService.getAvailableCar(carCategory);
+
+            response.writeHead(200, DEFAULT_HEADERS);
+            response.write(JSON.stringify({ result }));
+            response.end();
+          } catch (error) {
+            console.log('error', error);
+            response.writeHead(500, DEFAULT_HEADERS);
+            response.write(JSON.stringify({ error: 'Something is wrong!' }));
+            response.end();
+          }
+        }
+      },
+      '/rent:post': async (request, response) => {
+        for await (const data of request) {
+          try {
+            const { customer, carCategory, numberOfDays } = JSON.parse(data);
+            const result = await this.carService.rent(
+              customer,
+              carCategory,
+              numberOfDays
+            );
+
+            response.writeHead(200, DEFAULT_HEADERS);
+            response.write(JSON.stringify({ result }));
+            response.end();
+          } catch (error) {
+            console.log('error', error);
+            response.writeHead(500, DEFAULT_HEADERS);
+            response.write(JSON.stringify({ error: 'Something is wrong!' }));
+            response.end();
+          }
+        }
+      },
       default: (request, response) => {
         response.write(JSON.stringify({ sucess: 'Hello World!' }));
         return response.end();
@@ -41,7 +102,9 @@ class Api {
   initialize(port = DEFAULT_PORT) {
     const app = http
       .createServer(this.handler.bind(this))
-      .listen(port, () => console.log('app running at', this.generateRoutes));
+      .listen(port, () => console.log('app running at', port));
+
+    return app;
   }
 }
 
